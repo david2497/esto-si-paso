@@ -1,0 +1,43 @@
+/* Colores de config/brand.json: texto #F5F7FF sobre #0B1020 (≈ 17:1) y acento #FFC53D con #0B1020 (≈ 11:1). */
+:root {
+  --fondo: #0b1020;
+  --texto: #f5f7ff;
+  --suave: #c9cfe4;
+  --acento: #ffc53d;
+  --acento-texto: #0b1020;
+}
+* { box-sizing: border-box; }
+html { color-scheme: dark; }
+body {
+  margin: 0;
+  background: var(--fondo);
+  color: var(--texto);
+  font: 1.0625rem/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+header, main, footer { max-width: 44rem; margin: 0 auto; padding: 0 1rem; }
+header { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; align-items: center; justify-content: space-between; padding-block: 1.25rem; }
+.marca { margin: 0; font-weight: 800; font-size: 1.25rem; }
+nav { display: flex; gap: 1.25rem; }
+main { padding-block: 1rem 3rem; }
+h1 { font-size: clamp(1.75rem, 5vw, 2.5rem); line-height: 1.2; margin: 1rem 0; }
+h2 { font-size: 1.3rem; margin: 2.25rem 0 0.5rem; }
+a { color: var(--acento); text-underline-offset: 0.2em; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible { outline: 3px solid var(--acento); outline-offset: 3px; border-radius: 2px; }
+nav a[aria-current="page"] { text-decoration-thickness: 2px; font-weight: 700; }
+.boton {
+  display: inline-block;
+  min-height: 44px;
+  padding: 0.6rem 1.2rem;
+  background: var(--acento);
+  color: var(--acento-texto);
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 0.5rem;
+}
+.boton:focus-visible { outline-color: var(--texto); }
+.nota, footer { color: var(--suave); }
+footer { padding-block: 1.5rem 2rem; border-top: 1px solid #2a3150; font-size: 0.95rem; }
+li + li { margin-top: 0.4rem; }
+.saltar { position: absolute; left: -999px; top: 0.5rem; background: var(--acento); color: var(--acento-texto); padding: 0.5rem 1rem; z-index: 1; }
+.saltar:focus { left: 0.5rem; }
